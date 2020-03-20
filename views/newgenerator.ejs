@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+    <h1>
+        <%=typeof name!=='undefined'? name:''%>
+    </h1>
+
+    <h1> <%=typeof message!=='undefined'? message:'' %>
+    </h1>
+    <form action="/addinvoice" method="POST">
+        <div class="container">
+            <h2>New Invoice</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div>
+                        <b>Product Name</b>
+                        <br>
+                        <input style="width: 230px;" type="text" placeholder="Enter Product Name" name="productname" id="productname" required>
+                        <br><br>
+                        <b>Product Amount</b>
+                        <br>
+                        <input style="width: 230px;" type="number" placeholder="Enter Amount" name="amount" id="amount" required>
+                        <br><br>
+                        <b>Quantity</b>
+                        <br>
+                        <input style="width: 230px;" type="number" placeholder="Enter Product Quantity" name="quantity" id="quantity" required>
+                        <br><br>
+                        <b>Total Price</b>
+                        <br>
+                        <input style="width: 230px;" type="number" placeholder="Enter Total amount" name="totalamount" id="totalamount" required>
+                        <br>
+        
+        
+        
+        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <b>Customer Name</b><br>
+                        <input style="width: 230px;" type="text" placeholder="Enter Customer Name" name="customername" id="customername"
+                            required>
+                        <br>
+                        <br><b>Customer Address</b><br>
+                        <input style="width: 230px;" type="text" placeholder="Enter Customer Address" name="customeraddress"
+                            id="customeraddress" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <b>Company Name</b>
+                        <br>
+                        <input style="width: 230px;" type="text" placeholder="Enter Company Name" name="companyname" id="companyname" required>
+                        <br>
+                        <br><b>Company Address</b><br>
+                        <input style="width: 230px;" type="text" placeholder="Enter address" name="companyaddress" id="address" required>
+                        <br>
+                        <br><b>Company Logo</b><br>
+                        <input style="width: 230px;" type="text" placeholder="Enter Url" name="imageurl" id="imageurl" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                    <b>Invoice Number</b>
+                    <br>
+                    <input style="width: 230px;" type="number" placeholder="Enter Invoice Number" name="invoicenumber" id="invoicenumber" required>
+                    <br><br>
+                    <b>Date</b>
+                    <br>
+                    <input style="width: 230px;" type="date" placeholder="Enter Date" name="date" id="date" required>
+                    <br>
+                  </div>
+                  
+                </div>
+        
+               
+               </div>
+            
+            
+           
+       
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center; ">
+            <button style="width: 150px;" type="submit" >
+                Generate</button>
+        </div>
+        
+            
+    </form>
+    <form style="float:right; margin-top: -30px;" action="/logout" method="POST">
+        <button class="registerbtn" type="submit">logout</button>
+    </form>
+
+    <br>
+    <br>
+    <form style="float:left; margin-top: -80px;"  action="/fetchData" method="POST">
+        <button class="registerbtn" type="submit">History</button>
+    </form>
+</body>
+
+</html>

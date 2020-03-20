@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+    <br>
+    <button style="color: black;"><a style="color:white;" href="/newgenerator">New Invoice</a></button>
+
+    <h1>History</h1>
+   
+
+    
+    <table id="customers">
+        <thead style="text-align: center;">
+            <tr>
+    
+                <th>InvoiceNumber</th>
+                <th>CustomerName</th>
+                <th>CompanyName</th>
+                <th>Product</th>
+                <th>TotalAmount</th>
+                <th>Date</th>
+                <th>Delete</th>
+                <th>Update</th>
+                <th>PDF</th>
+            </tr>
+    
+        </thead>
+      
+        <%if(invoice.length>0){%>
+        <%for(let Invoice of invoice){%>
+        <tbody id="tablebody">
+            <td> <%=Invoice.invoicenumber%></td>
+            <td> <%=Invoice.customername%></td>
+            <td> <%=Invoice.companyname%></td>
+            <td> <%=Invoice.productname%></td>
+            <td style="color: red;"> <%=Invoice.totalamount%></td>
+            <td> <%=Invoice.date%></td>
+            <td>
+                <form action="/delete" method="POST">
+                    <input type="hidden" value="<%=Invoice.id%>" name="productID">
+                    <button class="registerbtn" type="submit">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="/update" method="POST">
+                    <input type="hidden" value="<%=Invoice.id%>" name="productID">
+                    <button class="registerbtn" type="get">Update</button>
+                </form>
+            </td>
+            <td>
+                <form action="/pdf" method="POST">
+                    <input type="hidden" value="<%=Invoice.id%>" name="productID">
+                    <button class="registerbtn" type="submit">Pdf</button>
+                </form>
+            </td>
+        </tbody>
+        <% } %>
+    </table>
+    
+    
+    
+    
+    <% } else { %>
+        <h1>No Invoice</h1>
+       
+        <% } %>
+
+        
+       
+    
+    
+   
+   
+</body>
+
+</html>
